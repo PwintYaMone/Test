@@ -11,29 +11,45 @@
 @endsection
 
 @section('content')
- <table border="1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <table class="table table-primary">
+  <thead>
+    <th>Name</th>
+    <th>Phone</th>
+
+    <th>Email</th>
+
+    <th>Address</th>
+    <th>First Month</th>
+     <th>Score</th>
+
+     <th>Second Month</th>
+     <th>Score</th>
+
+
+
+
+  </thead>
 
 
 
 	@foreach ($users as $val)
+  
+  <tbody>
    
     
     <tr>
-        <th>Name</th>
       <td> {{$val['name']}}</td>
 
     
     
-        <th>Phone</th>
         <td>{{$val['phone']}}</td>
 
     
     
-        <th>Email</th>
          <td>{{$val['email']}}</td>
     
     
-        <th>Address</th>
       <td> {{$val['address']}}</td>
     
         @foreach ($val['score'] as $key=>$val)
@@ -41,9 +57,11 @@
          <td>{{$val}}</td>
    
         @endforeach
-        </tr>
+        
 
      @endforeach
+     </tr>
+      </tbody>
 </table>
 
 
